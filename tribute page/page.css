@@ -1,0 +1,179 @@
+/* --- Global & Setup Styles --- */
+:root {
+    /* Define colors inspired by the Indian flag and a sporty theme */
+    --main-bg-color: #f0f0f0;    /* Light background */
+    --container-bg-color: #ffffff; /* White card */
+    --header-color: #FF9933;     /* Saffron-like Orange */
+    --accent-color: #138808;     /* Green */
+    --text-color: #333333;       /* Dark text */
+    --header-font: 'Oswald', sans-serif; /* Bold, impactful font for headings */
+    --body-font: 'Roboto', sans-serif;   /* Clean, readable font for body */
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+/* --- Container and Header --- */
+
+.tribute-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: var(--container-bg-color);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    padding-bottom: 25px;
+    border-bottom: 4px solid var(--accent-color);
+    margin-bottom: 30px;
+}
+
+#title {
+    font-family: var(--header-font);
+    color: var(--header-color);
+    font-size: 3.5em;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+header h2 {
+    font-size: 1.4em;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-top: 0;
+}
+
+/* --- Appealing Layout using Flexbox --- */
+
+.tribute-content {
+    display: flex;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.bio-section {
+    flex: 2; /* Takes up two-thirds of the space */
+}
+
+.image-area {
+    flex: 1; /* Takes up one-third of the space */
+    text-align: center;
+}
+
+/* --- Image Styling --- */
+#main-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 3px solid var(--header-color); /* Highlight border */
+}
+
+figcaption {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* --- Paragraph and Text Styling --- */
+
+h3 {
+    font-family: var(--header-font);
+    color: var(--accent-color);
+    border-left: 5px solid var(--header-color);
+    padding-left: 10px;
+    margin-top: 30px;
+}
+
+/* Different font styles/backgrounds for specific paragraphs */
+.intro-paragraph {
+    font-weight: 700; /* Bold for introduction */
+    color: #444;
+}
+
+.conclusion-paragraph {
+    background-color: #f7f7f7;
+    padding: 15px;
+    border-radius: 5px;
+    font-style: italic;
+    margin-top: 25px;
+}
+
+/* --- Achievements List Styling --- */
+#achievements-list {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+}
+
+#achievements-list li {
+    background: var(--accent-color);
+    color: white;
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+#achievements-list li:hover {
+    transform: translateX(5px); /* Small hover effect */
+}
+
+/* --- Quote Styling --- */
+.quote-section {
+    grid-column: 1 / -1; /* Make it span across all columns in a grid layout (optional) */
+    background-color: var(--header-color);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+blockquote {
+    font-size: 1.3em;
+    font-style: italic;
+    margin: 0;
+    text-align: center;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 30px;
+    border-top: 1px dashed #ccc;
+    font-size: 0.9em;
+    color: #999;
+}
+
+.demo-link {
+    display: inline-block;
+    color: var(--header-color);
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+/* --- Responsive Design (for smaller screens) --- */
+@media (max-width: 768px) {
+    .tribute-content {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+
+    #title {
+        font-size: 2.5em;
+    }
+
+    .image-area {
+        order: -1; /* Put the image at the top of the mobile layout */
+    }
+}
